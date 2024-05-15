@@ -16,6 +16,8 @@ interface ChatAi {
   };
 }
 
+const systemMessage = "You are indinar's AI, smart in generating data and high level programmer to help in development.";
+
 export const AiInvoke = async (queries: string, histories: ChatAi[]) => {
   const placedHistory: any = histories.map((m) => [
     ["user", m.me],
@@ -23,12 +25,12 @@ export const AiInvoke = async (queries: string, histories: ChatAi[]) => {
   ]);
   const prompt = placedHistory.length
     ? ChatPromptTemplate.fromMessages([
-        ["system", "You are narkreeta's AI, High Intelligence data solvers."],
+        ["system", systemMessage],
         placedHistory.flat().flat(),
         ["user", "{input}"],
       ])
     : ChatPromptTemplate.fromMessages([
-        ["system", "You are narkreeta's AI, High Intelligence data solvers."],
+        ["system", systemMessage],
         ["user", "{input}"],
       ]);
 

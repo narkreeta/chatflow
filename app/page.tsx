@@ -45,6 +45,9 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 h-screen flex flex-col justify-between">
+      <div>
+        <h3 className="text-4xl font-bold text-white text-center font-sans ">Indinar Chat</h3>
+      </div>
       <div className="h-auto flex-grow mb-2 overflow-auto flex flex-col gap-2 p-2 ">
         {chats.map((item, inx) => {
           return (
@@ -78,17 +81,21 @@ export default function Home() {
 const UserMessage = ({ message }: { message: string }) => {
   return (
     <div className="flex items-end gap-4 flex-row-reverse p-4 rounded">
-      <div className="bg-black text-white relative text-center rounded-full capitalize shadow-md">
+      <div className=" w-1/12 flex justify-start">
         <Image
           src={avImage.src}
           alt=""
           blurDataURL={avImage.blurDataURL}
           height={40}
           width={40}
-          className="object-cover object-center rounded-full"
+          className="object-cover object-center rounded-full bg-white"
         />
       </div>
-      <Markdown className="bg-white p-3 rounded text-wrap">{message}</Markdown>
+      <div className="w-11/12 flex justify-end">
+        <Markdown className="bg-white p-3 w-fit rounded text-wrap">
+          {message}
+        </Markdown>
+      </div>
     </div>
   );
 };
@@ -96,25 +103,27 @@ const UserMessage = ({ message }: { message: string }) => {
 const AiMessage = ({ message, load }: { message: string; load: boolean }) => {
   return (
     <div className="flex items-end gap-4 flex-row p-4 rounded">
-      <div className="bg-black text-white relative text-center rounded-full capitalize shadow-md shadow-white">
+      <div className=" w-1/12 flex justify-end">
         <Image
           src={aiImage.src}
           alt=""
           blurDataURL={aiImage.blurDataURL}
-          height={50}
-          width={50}
+          height={40}
+          width={40}
           className="object-cover object-center rounded-full"
         />
       </div>
-      {load ? (
-        <h3 className="text-white bg-black p-3 rounded text-wrap font-mono text-sm">
-          Wait For AI
-        </h3>
-      ) : (
-        <Markdown className="text-white bg-black font-mono text-sm p-3 tracking-wide rounded text-wrap">
-          {message}
-        </Markdown>
-      )}
+      <div className="w-11/12">
+        {load ? (
+          <h3 className="text-white bg-black p-3 rounded text-wrap font-mono text-sm">
+            Wait For AI
+          </h3>
+        ) : (
+          <Markdown className="text-white bg-black w-fit font-mono text-sm p-3 tracking-wide rounded text-wrap">
+            {message}
+          </Markdown>
+        )}
+      </div>
     </div>
   );
 };
