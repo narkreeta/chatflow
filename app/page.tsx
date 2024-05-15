@@ -2,6 +2,9 @@
 import { Fragment, useState } from "react";
 import Markdown from "react-markdown";
 import { AiInvoke } from "./ai";
+import aiImage from "@/public/image/ai.jpeg";
+import avImage from "@/public/image/avatar.png";
+import Image from "next/image";
 
 interface ChatAi {
   me: string;
@@ -29,7 +32,7 @@ export default function Home() {
       },
     ]);
     setQueries("");
-    const data = await AiInvoke(queries);
+    const data = await AiInvoke(queries, chats);
     setChats((chats) => {
       chats[chats.length - 1]["ai"] = {
         load: false,
@@ -63,7 +66,7 @@ export default function Home() {
         <button
           disabled={loading}
           onClick={handleAsk}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute inset-y-8 right-2"
+          className="bg-black text-white hover:bg-white hover:text-black font-bold py-2 px-4 rounded absolute inset-y-8 right-2"
         >
           Ask
         </button>
@@ -74,10 +77,17 @@ export default function Home() {
 
 const UserMessage = ({ message }: { message: string }) => {
   return (
-    <div className="flex items-center gap-4 flex-row-reverse">
-      <h4 className="bg-cf-secondary text-white p-2 rounded-full capitalize h-10 w-10 text-center shadow-md shadow-yellow-300">
-        me
-      </h4>
+    <div className="flex items-end gap-4 flex-row-reverse p-4 rounded">
+      <div className="bg-black text-white relative text-center rounded-full capitalize shadow-md">
+        <Image
+          src={avImage.src}
+          alt=""
+          blurDataURL={avImage.blurDataURL}
+          height={40}
+          width={40}
+          className="object-cover object-center rounded-full"
+        />
+      </div>
       <Markdown className="bg-white p-3 rounded text-wrap">{message}</Markdown>
     </div>
   );
@@ -85,14 +95,23 @@ const UserMessage = ({ message }: { message: string }) => {
 
 const AiMessage = ({ message, load }: { message: string; load: boolean }) => {
   return (
-    <div className="flex items-center gap-4 flex-row">
-      <h4 className="bg-cf-primary text-white p-2 h-10 w-10 text-center rounded-full capitalize shadow-md shadow-yellow-300">
-        Ai
-      </h4>
+    <div className="flex items-end gap-4 flex-row p-4 rounded">
+      <div className="bg-black text-white relative text-center rounded-full capitalize shadow-md shadow-white">
+        <Image
+          src={aiImage.src}
+          alt=""
+          blurDataURL={aiImage.blurDataURL}
+          height={50}
+          width={50}
+          className="object-cover object-center rounded-full"
+        />
+      </div>
       {load ? (
-        <h3 className="bg-white p-3 rounded text-wrap">Wait For AI</h3>
+        <h3 className="text-white bg-black p-3 rounded text-wrap font-mono text-sm">
+          Wait For AI
+        </h3>
       ) : (
-        <Markdown className="bg-white p-3 rounded text-wrap">
+        <Markdown className="text-white bg-black font-mono text-sm p-3 tracking-wide rounded text-wrap">
           {message}
         </Markdown>
       )}
