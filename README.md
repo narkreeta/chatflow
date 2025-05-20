@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ChatFlow: Custom Chat With AI
 
-## Getting Started
+ChatFlow is a custom chat application with AI. It's designed for users to interact with a smart AI system that's capable of generating data and programming at a high level. It's a perfect tool for developers to use in their development process, thanks to its smart AI system.
 
-First, run the development server:
+## Project Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The project is divided into several modules:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **ai.ts**: This is the module that contains all the logic related to the AI behavior. It's where we define our AI model and the way it interacts with the user.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **icon.tsx**: This module is responsible for generating the icons used in the application. It uses next/og to create image responses.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **layout.tsx**: This module contains the root layout of the application. It's where we define the base structure of our application's HTML, including the metadata.
 
-## Learn More
+- **page.tsx**: This module contains the main page of the application. It's where we handle the state of the chat and the user interactions.
 
-To learn more about Next.js, take a look at the following resources:
+- **tailwind.config.ts**: This module contains the configuration for tailwindcss, a utility-first CSS framework used in this project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To get the project up and running on your local machine, please follow the below steps:
 
-## Deploy on Vercel
+1. Clone the repository to a directory of your choice.
+2. Navigate into the directory and install the necessary packages by running the command `npm install`.
+3. Start the project by running the command `npm start`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In the application, you can write your queries in the textarea and click on the 'Ask' button to get a response from the AI. The AI message will be displayed in the chatbox.
+
+## Contributions 
+
+Contributions to the project are welcome! To contribute:
+
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a pull request.
+
+## License 
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+## Contact 
+
+For any inquiries or issues related to the project, please open an issue on the GitHub page.
+
+## Acknowledgments 
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
