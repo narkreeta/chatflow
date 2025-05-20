@@ -1,6 +1,6 @@
-import type { Config } from "tailwindcss";
+// import type { Config } from "tailwindcss";     //TypeScript type imports are not allowed in JavaScript [E0270]
 
-const config: Config = {
+const config = {     //TypeScript type annotations are not allowed in JavaScript code [E0224]
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
