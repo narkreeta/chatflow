@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ChatFlow
 
-## Getting Started
+ChatFlow is an interactive chat application leveraging the power of AI. The application allows users to communicate with an AI model in real-time, with the AI model being able to generate data and assist in development. The application also includes a visually appealing UI with custom icons and user-friendly layout.
 
-First, run the development server:
+## Features
+
+- Real-time interaction with an AI model
+- Customizable and user-friendly interface
+- Custom icon generation
+- Tailwind CSS for easy and efficient styling
+
+## Code Structure
+
+The codebase is structured into the following main parts:
+
+1. `ai.ts`: This file contains the implementation of the AI chat model, which is able to generate data and assist in development.
+
+2. `icon.tsx`: This file is responsible for generating the custom icons used in the application.
+
+3. `layout.tsx`: This file contains the layout of the application, including the metadata and the overall structure of the webpage.
+
+4. `page.tsx`: This file handles the main logic of the chat application, including handling user queries and AI responses.
+
+5. `tailwind.config.ts`: This file contains the configuration for Tailwind CSS, which is used for styling the application.
+
+## Setup
+
+To run this project, you will need to have Node.js and npm installed on your local machine.
+
+1. Clone the repository to your local machine.
+
+```bash
+git clone https://github.com/username/chatflow.git
+cd chatflow
+```
+
+2. Install the project dependencies.
+
+```bash
+npm install
+```
+
+3. Start the development server.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will start running at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[MIT](https://choosealicense.com/licenses/mit/)
